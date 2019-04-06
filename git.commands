@@ -1,0 +1,111 @@
+# Configure user name 
+git config --global user.name "King Kong"
+
+# Configure email
+git config --global user.email "king-kong@gmail.com"
+
+
+# show colors in terminal output
+git config --global color.ui true
+
+
+# List config settings
+git config --list
+
+# -------------------------------------------
+# Create new repo
+# -------------------------------------------
+
+# Create local git repo
+cd <dir where you have source code>
+git init 
+
+# Check status
+git status
+
+# -------------------------------------------
+# Commit to remote repo
+# -------------------------------------------
+
+
+
+
+# -------------------------------------------
+# Add remove files/dir 
+# -------------------------------------------
+# Add specific file
+git add Employee.java
+git add Department.java
+
+# Add current dir and all sub-dir
+git add .
+
+# Add current dir and all sub-dir
+git add --all
+
+# Remove from staging area
+git reset Department.java        # This is opposite of add
+git rm --cached Department.java  # This is opposite of add
+
+# -------------------------------------------
+# Commit
+# -------------------------------------------
+git commit -m "Added Employee pojo"
+
+git reset --soft HEAD^    # Undo last commit, and move head back by 1 commit
+                          # ^ means last commit
+
+git commit --amend -m "Adding one more file"
+			  # Amend the last commit message
+			  # It overwrite the last commit message
+
+# -------------------------------------------
+# Remote operations
+# -------------------------------------------
+# Bind the local to remote repo
+# "origin" is the default name of remote repo
+git remote add origin https://github.com/YourUsername/some-small-app.git
+
+# Push the code
+git push -u origin master
+
+# List remote repo
+git remote -v
+
+# -------------------------------------------
+# cloning
+# -------------------------------------------
+
+# Clone the remote to local
+git clone <repo>
+
+# Pull the latest changes
+git pull
+
+
+# -------------------------------------------
+# Branching
+# -------------------------------------------
+
+# Show the local and remote branches
+git branch -a
+
+
+# Create new branch (but still remain on current branch)
+git branch new-branch
+
+
+# Switch branch
+git checkout new-branch
+
+# Merge new-branch to master
+git checkout master
+git merge new-branch
+
+
+# delete branch
+git branch -d new-branch
+
+
+
+
